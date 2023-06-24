@@ -1,0 +1,125 @@
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+body{
+    background-color: whitesmoke;
+    header{
+        @extend %header;
+            h1{
+                @extend %h1;
+        }
+
+    }
+
+    .main-contacto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        
+        .h2-mod{
+            @extend %h2-mod;           
+        }
+
+        .h3-cont{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .form-c{
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 22rem;
+            @include tablet{
+                width: 30rem;
+            }
+            legend{
+                text-align: center;
+            }
+            .input-group{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                label{
+                    font-weight: bold;
+                    margin: 0.3rem;
+                    color: $color-oscuro;
+                }
+                
+                input{
+                    @extend %color-inputs;
+                }
+                textarea{
+                    @extend %color-inputs;
+
+                }
+
+            }
+            .btn-form{
+                display: flex;
+                margin-top: 1rem;
+                justify-content: space-between;
+                input{
+                    padding: 4px;
+                    border-radius: 0.6rem;
+                    color: $color-oscuro;
+                    background-color: $color-base;
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $color-intermedio;
+                        transition: 0.4ms;
+                    }
+                }
+            }            
+
+        }
+
+        
+    }
+
+    section{
+        margin-top: 2rem;
+        .h4-contacto{
+            text-decoration: underline;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-contacto{
+            display: grid;
+            grid-template-columns: auto;
+            justify-items: center;
+            row-gap: 2rem;
+
+            @include tablet{
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                @include margin(15%, 15%);
+
+                img{
+                    width: 100%;
+                    height: 21.875rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .footer{
+        @extend %footer;
+        margin-top: 2rem;
+        .btn{
+            .btn-inst{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }      
+    }
+}

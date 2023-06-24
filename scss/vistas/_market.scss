@@ -1,0 +1,111 @@
+
+
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+body{
+    background-color: whitesmoke;
+    header{
+        @extend %header;
+            h1{
+                @extend %h1;
+        }
+    
+    }
+
+    .main-market{
+        margin: 3rem 1rem 2rem 1rem;
+        .h2-mod{
+            @extend %h2-mod;
+            text-align: center !important;
+        }
+
+        .cont-img-market{
+            padding: 0 4rem;
+            
+            img{
+                @extend %prop-img;
+                padding: 1rem 2rem;
+
+                @include tablet{
+                    padding: 1.5rem;
+                    
+                }
+            } 
+
+            @include tablet{
+                .market-seis,
+                .market-ocho,
+                .market-nueve{
+                    display: none;
+                }
+
+                @include templates(2, 1fr, 4, 15rem);
+                padding: 3rem;
+            }
+
+            @include desktop{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 25rem);
+                padding: 1rem 5rem;
+
+                .market-ocho,
+                .market-nueve{
+                    display: block;
+                }
+                .market-once{
+                    grid-column: span 3;
+                }
+            }
+        }
+
+        .art-market{
+            h3{
+                @include text-align(center, 1rem);
+                font-size: 1.5rem;    
+            }
+
+            p{
+                @include text-align(center, 0.7rem);
+                
+                @include tablet{
+                    font-size: $size-tablet;
+                }
+                
+                @include desktop{
+                    margin: 0 4rem 1rem 4rem;
+                    font-size: $size-desktop;
+                }
+            }
+
+            ul{
+                margin-left: 40%; 
+                
+                @include tablet{
+                    font-size: $size-tablet;
+                }
+                
+                @include desktop{
+                    font-size: $size-desktop;
+                }
+            }
+        }
+    }
+
+    .footer{
+        @extend %footer;
+        .btn{
+            .btn-inst{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }
+            
+    }
+}

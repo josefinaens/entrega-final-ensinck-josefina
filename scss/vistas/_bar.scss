@@ -1,0 +1,92 @@
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+.body-bar{
+    background-color: whitesmoke;
+    header{           
+        @extend %header;
+            h1{
+                @extend %h1;
+        }
+
+    }
+    .main-bar{
+        margin: 3rem 1rem 2rem 1rem;
+        .h2-mod{
+            @extend %h2-mod;
+
+        }
+        .cont-img-bar{
+            margin-top: 2rem;
+            @include tablet{
+                @include templates(3, 25%, 2, auto);
+                justify-content: center;
+                row-gap: 1rem;
+                column-gap: 1rem;
+                margin-bottom: 1.5rem; 
+            }
+            @include desktop{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            img{
+                @extend %prop-img;
+            }
+
+            .img-bar-tres, 
+            .img-bar-cinco,
+            .img-bar-seis{
+                display: none;
+                @include tablet{
+                    display: block
+                }
+            }
+
+            .img-bar-uno, 
+            .img-bar-dos,
+            .img-bar-cuatro{
+                @extend %img-bar-c;
+                @include tablet{
+                    padding: 0 !important; 
+                }
+            }
+        
+            
+            
+        }
+        .art-bar{
+            justify-content: center;
+            margin-bottom: 2rem;
+            padding: 0.2rem;
+            @include tablet{
+                p{
+                    padding: 1rem 2rem 2rem 2rem;
+                    font-size: $size-tablet;
+                }
+            }
+            
+            @include desktop{
+                p{
+                    font-size: $size-desktop;
+                }  
+            }
+        }  
+    }
+
+    .footer{
+        @extend %footer;
+        .btn{
+            .btn-inst{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }
+            
+    }
+}

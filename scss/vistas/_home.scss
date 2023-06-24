@@ -1,0 +1,184 @@
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+body{
+    background-color: whitesmoke;
+    header{
+        @extend %header;
+            h1{
+                @extend %h1;
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translate(-50%, -50%); 
+                margin: 0;
+                width: 100%;
+                z-index: 1;
+            }
+            nav.navbar {
+                .navbar-nav {
+                    .nav-link {
+                        padding: 0.5rem;
+                        transition: font-size 0.3s;
+                        background-color: rgba(255, 255, 255, 0.61);
+                        text-shadow: 1px 1px 2px rgb(82, 80, 80);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                        &:visited{
+                           color: rgb(112, 87, 58);
+                           text-shadow: 1px 1px 2px  rgb(179, 142, 99);
+                        }
+                    }
+                }
+
+                .navbar-toggler{
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 0;
+                    background-color: rgba(255, 255, 255, 0.61);
+                }
+
+                .navbar-collapse{
+                    position: relative; 
+                    z-index: 2; 
+                    
+                }
+                
+            }
+              
+    }
+
+    .main-home{   
+        padding: 4rem 3rem;
+            
+        .contenedor-mediodias{
+            @include tablet{
+                display: flex;  
+                margin-left: 3rem;
+            }
+            
+            .img-home-uno{
+                @extend %img-home;
+                    img{
+                        justify-items: center;
+                    }
+            }
+            .mediodias{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 2rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+                
+                p{
+                        @extend %padd-home-p;
+                    }
+            }
+        }
+        
+        .contenedor-salas{
+            @include tablet{
+                display: flex; 
+                margin-left: 3rem;
+            }
+            
+            .img-home-dos{
+                @extend %img-home;
+                img{
+                    justify-items: center;
+                }
+            }
+            .sala-reuniones{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 1.5rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+               
+                p{
+                    @extend %padd-home-p;
+                }
+            }
+        
+        }
+
+        .contenedor-dias{
+            @include tablet{
+                display: flex;
+                margin-left: 3rem;   
+            }
+            
+            .img-home-tres{
+                @extend %img-home;
+                img{
+                    justify-items: center;
+                }
+            }
+            .dias-horarios{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 1.5rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+                
+                p{
+                    @extend %padd-home-p;
+                }
+        
+            }
+        }
+        @include desktop{
+            margin-left: 3%;
+            margin-right: 3%;
+            font-size: $size-desktop;
+        }
+    
+    }
+
+    .footer{
+        @extend %footer;
+        .btn{
+            border: none;
+            .btn-inst{
+                margin-bottom: 1rem;
+                display: block;
+                a:hover{
+                    background-color: $color-oscuro;
+                    box-shadow: 0 0 20px $color-oscuro;
+                    border-radius: 60%;
+                }
+                
+            }
+
+            .btn-map{
+                a:hover{
+                    background-color: $color-oscuro;
+                    box-shadow: 0 0 20px $color-oscuro;
+                    border-radius: 60%;  
+                }
+            }
+            
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }
+            
+    }
+
+}

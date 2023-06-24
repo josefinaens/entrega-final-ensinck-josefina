@@ -1,0 +1,25 @@
+@mixin texto-home($margin, $font-size){
+    text-align: left;
+    margin-left: $margin;
+    font-size: $font-size;
+}
+
+@mixin text-align($posit, $mb){
+    text-align: $posit;
+    margin-bottom: $mb;
+}
+
+@mixin margin($left, $right){
+    margin-left: $left;
+    margin-right: $right;
+}
+
+
+
+@mixin templates($column, $valorc, $row, $valor){
+    display: grid;
+    grid-template-columns: repeat($column, $valorc);
+    grid-template-rows: repeat($row, $valor);
+}
+
+

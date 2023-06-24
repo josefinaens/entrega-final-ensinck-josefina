@@ -1,0 +1,88 @@
+@import "../utilidades/variables";
+
+%img-home{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; 
+}
+
+%padd-home-p{
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+
+//boton de whatsapp
+%item-fixed{
+    position: fixed;
+    bottom: 6rem;
+    right: 3rem;
+}
+
+
+%header{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+    background-image: url(../img/varias/img-bannerdos.jpg);
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-size: cover;
+}
+
+%h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.3rem solid black;
+    border-bottom: 0.3rem solid black;
+    background-color: white;
+    font-size: 1.9rem;  
+}
+
+%h2-mod{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+//prop img
+
+%prop-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+//prop img de BAR
+%img-bar-c{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+ //propor img KAMADOS
+
+ %img-kamado-c{
+    display: flex;
+    justify-content: center;
+ }
+
+%footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+//contactos
+%color-inputs{
+    background-color: $color-base; 
+    border: solid $color-intermedio;
+    outline: none;
+}
+
+
+
+
